@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Image Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <h2>History</h2>
+            
+
+            
+<ul id="history-list">
+            
+    {% for prompt in prompts %}
+            
+        <li data-prompt-id="{{ prompt.id }}" data-full-prompt="{{ prompt.prompt_text }}">{{ prompt.prompt_text.splitlines()[0] }}</li>
+            
+    {% endfor %}
+            
+</ul>
+            
+        </div>
+        <div class="main-content">
+            <div class="user-info">
+                <span>Welcome, {{ current_user.username }}!</span>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+            <div class="prompt-area">
+                <textarea id="prompt-input" placeholder="Describe the image you want to create..."></textarea>
+                <button id="generate-btn">Generate</button>
+            </div>
+            <div class="image-display">
+                <img id="generated-image" src="" alt="Generated Image">
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

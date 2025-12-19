@@ -1,0 +1,9 @@
+
+I have applied the corrected logic to `app.py`. We are now using the standard library method with the `imagen-4.0-generate-001` model that you have access to. This should resolve the `AttributeError`.
+
+Please restart the server one more time:
+
+1.  Stop the server with `Ctrl+C`.
+2.  Start it again with `python3 app.py`.
+
+This should now work as intended. Thank you for your patience as we worked through the model and library version issues. Please let me know the result.
